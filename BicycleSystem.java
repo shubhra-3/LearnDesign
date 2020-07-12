@@ -1,6 +1,14 @@
 package LearnDesign;
 
 
+interface WheelSpecifications {
+
+	double rim = 0.0 , tire = 0.0, diameter = 0.0;
+	double getDiameter();
+	double getCircumference();
+
+}
+
 class Gear{
 	
 	int chainring; //number of teeth
@@ -38,7 +46,7 @@ class Gear{
 
 //3
 //So here we intoduce a wheel class
-class Wheel {
+class Wheel implements WheelSpecifications {
 
 	double rim, tire;
 	final double pi = (double)22/7;
@@ -48,11 +56,11 @@ class Wheel {
 		this.tire = tire;
 	}
 
-	double getDiameter(){
+	public double getDiameter(){
 		return (rim + ( tire * 2 ) );
 	}
 
-	double getCircumference(){
+	public double getCircumference(){
 		return getDiameter() * pi;
 	}
 
