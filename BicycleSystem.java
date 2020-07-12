@@ -20,8 +20,22 @@ class Gear{
 	}
 
 	double getgearInches() {
-		double temp = ratio * (rim + (tire * 2));
+		//double temp = ratio * (rim + (tire * 2));
+		//we should support single responsibilty
+		//why do gear inches need to claculate diameter
+		// so
+
+		double temp = ratio * getDiameter();
+
+		//but then there is still a problem
+		//to calculate a wheel's dia is not the task of 
+		//gear class
+		//we need a separate wheel class
 		return temp;
+	}
+
+	double getDiameter(){
+		return (rim + ( tire * 2 ) );
 	}
 
 }
